@@ -2,7 +2,7 @@ import pyaudio
 import wave
 # look into pydub for import
 
-CHUNK = 1024
+CHUMNK = 1024
 FORMAT = pyaudio.paInt16
 CHANNELS = 2
 RATE = 44100
@@ -16,15 +16,15 @@ stream = p.open(
 	channels=CHANNELS,
     rate=RATE,
     input=True,
-    frames_per_buffer=CHUNK
+    frames_per_buffer=CHUMNK
 )
 
 print("******* recording *******")
 
 frames = []
 
-for i in range(0, int(RATE / CHUNK * RECORD_SECONDS)):
-    data = stream.read(CHUNK)
+for i in range(0, int(RATE / CHUMNK * RECORD_SECONDS)):
+    data = stream.read(CHUMNK)
     frames.append(data)
 
 print("******* done recording *******")
